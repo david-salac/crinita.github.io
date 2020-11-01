@@ -52,6 +52,7 @@ cr.Config.append_to_menu = (
 )
 # Change config
 cr.Config.site_logo_text = "Crinita"
+cr.Config.site_title = "Crinita"
 cr.Config.default_meta_description = """Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages)."""
 cr.Config.default_meta_keywords = "Crinita, static websites, generator, free, open-source"
 cr.Config.text_sections_in_right_menu = (
