@@ -259,11 +259,11 @@ nav ul li a {
     padding: 15px 0 15px 0;
 }
 nav ul li a {
-    color: #8e8d7b;
+    color: white;
     display: block;
 }
 nav ul li a:hover {
-    color: white;
+    color: #8e8d7b;
 }
 
 .code {
