@@ -267,7 +267,6 @@ nav ul li a:hover {
 }
 
 .code {
-    font-size: 120%;
     overflow: scroll;
     box-sizing: border-box;
     padding: 15px;
