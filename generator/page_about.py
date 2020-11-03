@@ -84,9 +84,9 @@ to explain it here again).</p>
 <p>To install Crinita, you can use your PIP
 directly with a default package manager (PyPi.org). Just write
 a command:</p>
-<pre><code>pip <span class="hljs-keyword">install</span> crinita
+<pre class="code"><code>pip <span class="hljs-keyword">install</span> crinita
 </code></pre><p>To check if the installation is successful, write in some script:</p>
-<pre><code><span class="hljs-keyword">import</span> crinita <span class="hljs-keyword">as</span> cr
+<pre class="code"><code><span class="hljs-keyword">import</span> crinita <span class="hljs-keyword">as</span> cr
 </code></pre><p>If you do not see any error, it looks good.</p>
 <h2 id="how-to-use-crinita">How to use Crinita</h2>
 <p>The simplest way where to start to generate your own websites
