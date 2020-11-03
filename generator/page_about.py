@@ -1,6 +1,7 @@
 import crinita as cr
 
 html_code = """Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a>
+<p>Project sites: <a href="http://crinita.com/">Crinita</a></p>
 <p>Python application for generating static websites like a blog or
 simple static pages. Creates HTML files based on inputs (without
 requiring to run any script languages on the server-side).</p>
@@ -83,9 +84,9 @@ to explain it here again).</p>
 <p>To install Crinita, you can use your PIP
 directly with a default package manager (PyPi.org). Just write
 a command:</p>
-<pre class="code"><code>pip <span class="hljs-keyword">install</span> crinita
+<pre><code>pip <span class="hljs-keyword">install</span> crinita
 </code></pre><p>To check if the installation is successful, write in some script:</p>
-<pre class="code"><code><span class="hljs-keyword">import</span> crinita <span class="hljs-keyword">as</span> cr
+<pre><code><span class="hljs-keyword">import</span> crinita <span class="hljs-keyword">as</span> cr
 </code></pre><p>If you do not see any error, it looks good.</p>
 <h2 id="how-to-use-crinita">How to use Crinita</h2>
 <p>The simplest way where to start to generate your own websites

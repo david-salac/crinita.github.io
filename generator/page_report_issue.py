@@ -15,6 +15,8 @@ can raise on GitHub.</p>
 <p>We would like to say thank you to anyone who has raised any pertinent
 issue already. We really do appreciate this as this is the leading
 force for innovations and improvements.</p>
+<h2 id="where-to-find-github-page">Where to find GitHub page</h2>
+<p>Crinita GitHub project is located at <a href="https://github.com/david-salac/crinita">https://github.com/david-salac/crinita</a></p>
 """
 
 ENTITY = cr.Page(
