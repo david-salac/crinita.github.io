@@ -25,7 +25,7 @@ SOFTWARE.</p>"""
 ENTITY = cr.Page(
     title="MIT License",
     url_alias='license',
-    large_image_path=None,
+    large_image_path="images/license_big.png",
     content=html_code,
     menu_position=20
 )
