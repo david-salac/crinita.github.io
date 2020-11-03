@@ -1,55 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Crinita | About Crinita</title>
-    <meta name="description" content="Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without any script languages).">
-    <meta name="keywords" content="Crinita, Static Website Generator, Blog, Pages, Websites">
-    <meta name="author" content="Crinita team">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="container">
-        <nav>
-            <a href="/" id="logo">
-                <span id="icon">&nbsp;</span>
-                Crinita
-            </a>
-            
-<ul>
-    
-        <li>
-            <a href="/">About Crinita</a>
-        </li>
-    
-        <li>
-            <a href="report-issue.html">Report issue</a>
-        </li>
-    
-        <li>
-            <a href="license.html">MIT License</a>
-        </li>
-    
-        <li>
-            <a href="https://github.com/david-salac/crinita">GitHub Project</a>
-        </li>
-    
-</ul>
+import crinita as cr
 
-        </nav>
-        <section>
-            <main>
-                <div id="page-content">
-                    
-<header>
-    <h1>About Crinita</h1>
-    
-</header>
-<article>
-    
-    <div class="content">
-        Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a>
+html_code = """Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a>
 <p>Python application for generating static websites like a blog or
 simple static pages. Creates HTML files based on inputs (without
 requiring to run any script languages on the server-side).</p>
@@ -147,25 +98,12 @@ simple static websites.</li>
 </ol>
 <p>In all these cases, the generating script is in the folder generator.
 There is also a definition of pages and articles there.</p>
+"""
 
-        
-    </div>
-</article>
-                </div>
-
-                <aside>
-                    
-                    
-                    <h3>What is Crinita</h3>
-<div class="separator"></div>
-<p>Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version 0.0.9</p></p>
-                </aside>
-                <div class="clear"></div>
-            </main>
-            <footer>
-                <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />All the content is licensed under a <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-            </footer>
-        </section>
-    </div>
-</body>
-</html>
+ENTITY = cr.Page(
+    title="About Crinita",
+    url_alias=None,  # Is homepage
+    large_image_path=None,
+    content=html_code,
+    menu_position=0
+)

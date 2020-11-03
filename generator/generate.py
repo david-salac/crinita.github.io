@@ -1,77 +1,71 @@
-import shutil
 from pathlib import Path
+import shutil
+from typing import List, Union
+import pkgutil
+from os import listdir
 
 import crinita as cr
 
-homepage = cr.Page(
-    title="Project",
-    url_alias=None,  # Homepage
-    content="""Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages on the server-side).""",
-    menu_position=0,
-    description="""Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).""",
-    keywords="Crinita, static websites, generator, free, open-source",
-    large_image_path=None
-)
-license_page = cr.Page(
-    title="License",
-    url_alias='license',
-    content="""MIT License
-<p>
-Copyright (c) 2020 David Salac
-</p><p>
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-</p><p>
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-</p><p>
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>""",
-    menu_position=5,
-    large_image_path=None
-)
+# Iterate through all entities
+ENTITIES: List[Union[cr.Page, cr.Article]] = []
+for single_file in pkgutil.walk_packages(['.']):
+    try:
+        if single_file.name == 'generate':
+            continue
+        pack = __import__(single_file.name)
+        ENTITIES.append(pack.ENTITY)
+    except:  # noqa
+        continue
 
-# Template path
+sites = cr.Sites(ENTITIES)
+# ========= CONFIGURATION =========
+# Path to outputs
+output_directory: Path = Path('../')
+# Resource directory
+resource_directory: Path = Path('RESOURCES')
+
+# Add template path:
 cr.Config.templates_path = Path('templates')
-# Append menu
+# Configure blog name
+cr.Config.site_logo_text = "Crinita"
+cr.Config.site_title = "Crinita"
 cr.Config.append_to_menu = (
     {
         'title': "GitHub Project",
         'url': "https://github.com/david-salac/crinita",
-        'menu_position': 10
+        'menu_position': 30
     },
 )
-# Change config
-cr.Config.site_logo_text = "Crinita"
-cr.Config.site_title = "Crinita"
-cr.Config.default_meta_description = """Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages)."""
-cr.Config.default_meta_keywords = "Crinita, static websites, generator, free, open-source"
 cr.Config.text_sections_in_right_menu = (
     {
-        "header": "About",
-        "content": f'The description and documentation of Crinita application.<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version {cr.__version__}</p>'
+        "header": "What is Crinita",
+        "content": f'Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version {cr.__version__}</p>'
     },)
+cr.Config.default_meta_description = "Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without any script languages)."
 cr.Config.default_meta_meta_author = "Crinita team"
+cr.Config.default_meta_keywords = "Crinita, Static Website Generator, Blog, Pages, Websites"
 cr.Config.site_home_url = "/"
+cr.Config.site_map_url_prefix = "http://crinita.com/"
+# =================================
 
-generator = cr.Sites(
-    list_of_articles=[], list_of_pages=[homepage, license_page]
-)
-output_directory_path: Path = Path('../')
-generator.generate_pages(output_directory_path)
+# Remove existing content
+if output_directory.exists():
+    if output_directory.joinpath('images').exists():
+        shutil.rmtree(output_directory.joinpath('images'))
+    if output_directory.joinpath('styles.css').exists():
+        shutil.rmtree(output_directory.joinpath('styles.css'))
+    onlyfiles = [f for f in listdir(output_directory) if output_directory.joinpath(f).is_file() and cr.Config.site_file_suffix in f]
+    for file in onlyfiles:
+        output_directory.joinpath(file).unlink()
+    if output_directory.joinpath("robots.txt").exists():
+        output_directory.joinpath("robots.txt").unlink()
+    if output_directory.joinpath("sitemap.xml").exists():
+        output_directory.joinpath("sitemap.xml").unlink()
+    if output_directory.joinpath("style.css").exists():
+        output_directory.joinpath("style.css").unlink()
 
+# Generate sites
+sites.generate_pages(output_directory)
 
-# TODO: REWRITE IN SMARTER WAY
-# Postprocessing scripts
-shutil.copy(Path('resources/root/style.css'), Path(output_directory_path, 'style.css'))
-Path(output_directory_path, 'images').mkdir(exist_ok=True)
-shutil.copy(Path('resources/images/logo.png'), Path(output_directory_path, 'images', 'logo.png'))
+# Add resources
+shutil.copytree(resource_directory, output_directory, dirs_exist_ok=True)
