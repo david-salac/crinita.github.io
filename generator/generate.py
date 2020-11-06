@@ -46,6 +46,9 @@ cr.Config.default_meta_meta_author = "Crinita team"
 cr.Config.default_meta_keywords = "Crinita, Static Website Generator, Blog, Pages, Websites"
 cr.Config.site_home_url = "/"
 cr.Config.site_map_url_prefix = "http://crinita.com/"
+cr.Config.robots_txt = """User-agent: *
+Allow: /
+Sitemap: http://crinita.com/sitemap.xml"""
 # =================================
 
 # Remove existing content
