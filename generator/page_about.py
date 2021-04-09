@@ -1,11 +1,11 @@
 import crinita as cr
 
-html_code = """Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a>
-<p>Project sites: <a href="http://crinita.com/">Crinita</a></p>
+html_code = """<p>Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a></p>
+<p>Project sites: <a href="https://crinita.com/">Crinita</a></p>
 <p>Python application for generating static websites like a blog or
 simple static pages. Creates HTML files based on inputs (without
 requiring to run any script languages on the server-side).</p>
-<h2 id="blog-and-static-website-generator">Blog and static website generator</h2>
+<h2>Blog and static website generator</h2>
 <p>Generally speaking, Crinita is a static website generator. That is
 an application that generates simple HTML files that cover all the
 content of sites from all inputs - composed mainly of the
@@ -24,14 +24,14 @@ difference if you consider how vulnerable are websites running on
 WordPress or similar technologies). Last but not least advantage is
 cost-effectiveness - you do not need to use any expensive technologies
 for hosting (like AWS) or pay directly for these services (like Wix,
-Medium). </p>
+Medium).</p>
 <p>Crinita allows you to generate blog (and/or) websites (blog
 or just set of static pages). It includes advanced features like
 tags, the possibility to edit meta tags for each entity (article
 or page). Interface for using Crinita is simple so you can learn
 it quickly. Installation of Crinita is a simple task as it does not
 require any system dependencies.</p>
-<h2 id="typical-use-cases">Typical use cases</h2>
+<h2>Typical use cases</h2>
 <p>There are some typical use cases when it is beneficial to use Crinita,
 among the most popular are:</p>
 <ol>
@@ -41,7 +41,7 @@ Blogger. However, the technical quality of these services is notoriously
 weak (particularly if it comes to Blogger). It is often hard to use them
 for anything even bit more technical (like including articles with
 code examples). The resulting page often is also technically weak - no
-SEO-friendly output (usually it&#39;s impossible to index article in Google
+SEO-friendly output (usually it's impossible to index article in Google
 at all).</li>
 <li>Do not want to pay for services like Medium: Many helpful services
 can run your blog (or static pages) in a technically suitable way. One
@@ -76,7 +76,7 @@ is to deploy them through GitHub pages (technically the free hosting
 for static websites) - which is a highly recommended approach (as you
 can have both generating scripts and content on one place and backed-up).</li>
 </ol>
-<h2 id="how-to-install-crinita">How to install Crinita</h2>
+<h2>How to install Crinita</h2>
 <p>In order to install Crnita, you need to have prepared your Python (in
 version at least 3.8) environment ready first. There are many manuals
 on how to install Python on your machine (so there is no reason why
@@ -84,11 +84,13 @@ to explain it here again).</p>
 <p>To install Crinita, you can use your PIP
 directly with a default package manager (PyPi.org). Just write
 a command:</p>
-<pre class="code"><code>pip <span class="hljs-keyword">install</span> crinita
-</code></pre><p>To check if the installation is successful, write in some script:</p>
-<pre class="code"><code><span class="hljs-keyword">import</span> crinita <span class="hljs-keyword">as</span> cr
-</code></pre><p>If you do not see any error, it looks good.</p>
-<h2 id="how-to-use-crinita">How to use Crinita</h2>
+<pre><code>pip install crinita
+</code></pre>
+<p>To check if the installation is successful, write in some script:</p>
+<pre><code>import crinita as cr
+</code></pre>
+<p>If you do not see any error, it looks good.</p>
+<h2>How to use Crinita</h2>
 <p>The simplest way where to start to generate your own websites
 is to use the logic of existing ones:</p>
 <ol>

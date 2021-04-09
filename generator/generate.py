@@ -38,9 +38,18 @@ cr.Config.append_to_menu = (
 )
 cr.Config.text_sections_in_right_menu = (
     {
+        "header": "Recommended links",
+        "content": """
+        <ul>
+        <li><a href="https://itblog.uk/">IT Blog</a></li>
+        <li><a href="https://portable-spreadsheet.com/">Portable Spreadsheet</a></li>
+        </ul>"""
+    },
+    {
         "header": "What is Crinita",
         "content": f'Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version {cr.__version__}</p>'
-    },)
+    },
+)
 cr.Config.default_meta_description = "Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without any script languages)."
 cr.Config.default_meta_meta_author = "Crinita team"
 cr.Config.default_meta_keywords = "Crinita, Static Website Generator, Blog, Pages, Websites"
