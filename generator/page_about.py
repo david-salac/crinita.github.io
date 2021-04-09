@@ -84,10 +84,10 @@ to explain it here again).</p>
 <p>To install Crinita, you can use your PIP
 directly with a default package manager (PyPi.org). Just write
 a command:</p>
-<pre><code>pip install crinita
+<pre class="code"><code>pip install crinita
 </code></pre>
 <p>To check if the installation is successful, write in some script:</p>
-<pre><code>import crinita as cr
+<pre class="code"><code>import crinita as cr
 </code></pre>
 <p>If you do not see any error, it looks good.</p>
 <h2>How to use Crinita</h2>
