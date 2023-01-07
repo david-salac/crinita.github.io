@@ -42,7 +42,7 @@ cr.Config.text_sections_in_right_menu = (
         "content": """
         <ul>
         <li><a href="https://itblog.uk/">IT Blog</a></li>
-        <li><a href="https://portable-spreadsheet.com/">Portable Spreadsheet</a></li>
+        <li><a href="https://portable-spreadsheet.salispace.com/">Portable Spreadsheet</a></li>
         </ul>"""
     },
     {
