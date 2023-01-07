@@ -1,7 +1,7 @@
 # GitHub hosting for Crinita project websites
 Author: David Salac <https://github.com/david-salac>
 
-This is the hosting repo for websites <https://crinita.com/>
+This is the hosting repo for websites <https://crinita.salispace.com/>
 
 Sites are generated using Crinita system.
 

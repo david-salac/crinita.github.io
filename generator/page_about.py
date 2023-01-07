@@ -1,7 +1,7 @@
 import crinita as cr
 
 html_code = """<p>Author: David Salac <a href="https://www.github.com/david-salac">https://www.github.com/david-salac</a></p>
-<p>Project sites: <a href="https://crinita.com/">Crinita</a></p>
+<p>Project sites: <a href="https://crinita.salispace.com/">Crinita</a></p>
 <p>Python application for generating static websites like a blog or
 simple static pages. Creates HTML files based on inputs (without
 requiring to run any script languages on the server-side).</p>

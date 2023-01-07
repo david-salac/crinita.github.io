@@ -47,17 +47,17 @@ cr.Config.text_sections_in_right_menu = (
     },
     {
         "header": "What is Crinita",
-        "content": f'Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).<p>Generated using <a href="http://www.crinita.com/">Crinita</a> version {cr.__version__}</p>'
+        "content": f'Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without requiring to run any script languages).<p>Generated using <a href="http://crinita.salispace.com/">Crinita</a> version {cr.__version__}</p>'
     },
 )
 cr.Config.default_meta_description = "Python application for generating static websites like a blog or simple static pages. Creates HTML files based on inputs (without any script languages)."
 cr.Config.default_meta_meta_author = "Crinita team"
 cr.Config.default_meta_keywords = "Crinita, Static Website Generator, Blog, Pages, Websites"
 cr.Config.site_home_url = "/"
-cr.Config.site_map_url_prefix = "https://crinita.com/"
+cr.Config.site_map_url_prefix = "https://crinita.salispace.com/"
 cr.Config.robots_txt = """User-agent: *
 Allow: /
-Sitemap: https://crinita.com/sitemap.xml"""
+Sitemap: https://crinita.salispace.com/sitemap.xml"""
 # =================================
 
 # Remove existing content
